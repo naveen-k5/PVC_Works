@@ -11,13 +11,13 @@ html {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.45); /* dark transparent layer for text readability */
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* Background fade-in */
 @keyframes fadeInBackground {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* Text fade-in animation */
