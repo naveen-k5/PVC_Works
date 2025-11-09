@@ -11,16 +11,16 @@ html {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.45); /* keeps text readable */
 }
 
-/* Background fade-in */
+/* Smooth fade + zoom animation */
 @keyframes fadeInBackground {
   from { opacity: 0; transform: scale(1.05); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Text fade-in animation */
+/* Text animations */
 .fade-in {
   opacity: 0;
   animation: fadeInText 1.2s ease forwards;
@@ -39,12 +39,6 @@ html {
 }
 
 @keyframes fadeInText {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
