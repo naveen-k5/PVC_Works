@@ -4,41 +4,37 @@ html {
 
 .hero-section {
   position: relative;
-  background-size: cover;
-  background-position: center;
+  min-height: 70vh; /* adjust height (70% of screen) */
+  background-image: url('images/hero-bg.jpg');
+  background-position: center center;
   background-repeat: no-repeat;
-  animation: fadeInBackground 2s ease-in-out;
+  background-size: cover;
+ /* ensures full image visible, not cut */
+  background-color: #000; /* fallback background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* optional overlay for text readability */
 .overlay {
-  background: rgba(0, 0, 0, 0.45); /* keeps text readable */
+  background: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: 100%;
+  padding: 80px 20px;
 }
 
-/* Smooth fade + zoom animation */
-@keyframes fadeInBackground {
-  from { opacity: 0; transform: scale(1.05); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Text animations */
-.fade-in {
-  opacity: 0;
-  animation: fadeInText 1.2s ease forwards;
-}
-
-.fade-in-delay {
-  opacity: 0;
-  animation: fadeInText 1.2s ease forwards;
-  animation-delay: 0.5s;
-}
-
-.fade-in-delay2 {
-  opacity: 0;
-  animation: fadeInText 1.2s ease forwards;
-  animation-delay: 1s;
-}
-
+/* Fade-in effect */
 @keyframes fadeInText {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.fade-in, .fade-in-delay, .fade-in-delay2 {
+  opacity: 0;
+  animation: fadeInText 1.2s ease forwards;
+}
+
+.fade-in-delay { animation-delay: 0.5s; }
+.fade-in-delay2 { animation-delay: 1s; }
