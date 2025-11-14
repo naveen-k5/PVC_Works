@@ -88,7 +88,7 @@
     </div>
   </section>
 
-  <!-- Projects -->
+ <!-- Projects -->
 <section id="projects" class="max-w-6xl mx-auto py-16 px-4">
   <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center">Recent Projects</h3>
 
@@ -99,10 +99,13 @@
       <img src="door1.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
       <p class="mt-3 font-medium text-gray-700">PVC Kitchen Designs Installation</p>
 
-      <!-- Like Button -->
-      <button class="like-btn mt-3 bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
-        ❤️ Like
-      </button>
+      <!-- Like Button + Count -->
+      <div class="mt-3">
+        <button class="like-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
+          ❤️ Like
+        </button>
+        <p class="like-count mt-1 text-sm text-gray-600">Likes: 0</p>
+      </div>
     </div>
 
     <!-- Project 2 -->
@@ -110,10 +113,12 @@
       <img src="door2.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
       <p class="mt-3 font-medium text-gray-700">Glass PVC Kitchen Designs</p>
 
-      <!-- Like Button -->
-      <button class="like-btn mt-3 bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
-        ❤️ Like
-      </button>
+      <div class="mt-3">
+        <button class="like-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
+          ❤️ Like
+        </button>
+        <p class="like-count mt-1 text-sm text-gray-600">Likes: 0</p>
+      </div>
     </div>
 
     <!-- Project 3 -->
@@ -121,10 +126,12 @@
       <img src="door3.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
       <p class="mt-3 font-medium text-gray-700">TV Showcase Room</p>
 
-      <!-- Like Button -->
-      <button class="like-btn mt-3 bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
-        ❤️ Like
-      </button>
+      <div class="mt-3">
+        <button class="like-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
+          ❤️ Like
+        </button>
+        <p class="like-count mt-1 text-sm text-gray-600">Likes: 0</p>
+      </div>
     </div>
 
   </div>
@@ -132,22 +139,30 @@
 
 <!-- Like Button Script -->
 <script>
-  document.querySelectorAll(".like-btn").forEach(btn => {
-    btn.addEventListener("click", function () {
-      this.classList.toggle("liked");
+  document.querySelectorAll(".like-btn").forEach((btn, index) => {
+    let count = 0;
+    const countElement = btn.parentElement.querySelector(".like-count");
 
-      if (this.classList.contains("liked")) {
-        this.style.backgroundColor = "#ef4444"; // red
-        this.style.color = "white";
-        this.textContent = "❤️ Liked";
+    btn.addEventListener("click", function () {
+      btn.classList.toggle("liked");
+
+      if (btn.classList.contains("liked")) {
+        btn.style.backgroundColor = "#ef4444"; // red
+        btn.style.color = "white";
+        btn.textContent = "❤️ Liked";
+        count++;
       } else {
-        this.style.backgroundColor = "#e5e7eb"; // gray
-        this.style.color = "#374151";
-        this.textContent = "❤️ Like";
+        btn.style.backgroundColor = "#e5e7eb"; // gray
+        btn.style.color = "#374151";
+        btn.textContent = "❤️ Like";
+        count--;
       }
+
+      countElement.textContent = "Likes: " + count;
     });
   });
 </script>
+
 
   <!-- Contact -->
   <section id="contact" class="bg-blue-700 text-white py-16 px-4 text-center">
