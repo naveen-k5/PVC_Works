@@ -69,53 +69,67 @@
 
  
 
-  <!-- Projects -->
-  <section id="projects" class="max-w-6xl mx-auto py-16 px-4">
-    <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center">Recent Projects</h3>
+ <!-- Projects Slider -->
+<section id="projects" class="max-w-6xl mx-auto py-16 px-4">
+  <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center">Recent Projects</h3>
 
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+  <div class="relative overflow-hidden">
 
-      <!-- Project 1 -->
-      <div class="p-3 bg-white rounded-xl shadow">
-        <img src="door1.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
+    <!-- Slider Wrapper -->
+    <div id="slider" class="flex transition-transform duration-500">
+      
+      <!-- Slide 1 -->
+      <div class="min-w-full px-4 text-center">
+        <img src="door1.jpg" class="w-full rounded-xl shadow-md" />
         <p class="mt-3 font-medium text-gray-700">PVC Kitchen Designs Installation</p>
-
-        <div class="mt-3">
-          <button class="like-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
-            ❤️ Like
-          </button>
-          <p class="like-count mt-1 text-sm text-gray-600">Likes: 0</p>
-        </div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="p-3 bg-white rounded-xl shadow">
-        <img src="door2.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
+      <!-- Slide 2 -->
+      <div class="min-w-full px-4 text-center">
+        <img src="door2.jpg" class="w-full rounded-xl shadow-md" />
         <p class="mt-3 font-medium text-gray-700">Glass PVC Kitchen Designs</p>
-
-        <div class="mt-3">
-          <button class="like-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
-            ❤️ Like
-          </button>
-          <p class="like-count mt-1 text-sm text-gray-600">Likes: 0</p>
-        </div>
       </div>
 
-      <!-- Project 3 -->
-      <div class="p-3 bg-white rounded-xl shadow">
-        <img src="door3.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
+      <!-- Slide 3 -->
+      <div class="min-w-full px-4 text-center">
+        <img src="door3.jpg" class="w-full rounded-xl shadow-md" />
         <p class="mt-3 font-medium text-gray-700">TV Showcase Room</p>
-
-        <div class="mt-3">
-          <button class="like-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition">
-            ❤️ Like
-          </button>
-          <p class="like-count mt-1 text-sm text-gray-600">Likes: 0</p>
-        </div>
       </div>
 
+      <!-- Add more slides here -->
     </div>
-  </section>
+
+    <!-- Navigation Buttons -->
+    <button id="prevBtn"
+      class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-black">
+      ◀
+    </button>
+    <button id="nextBtn"
+      class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-black">
+      ▶
+    </button>
+
+  </div>
+</section>
+
+<!-- Slider Script -->
+<script>
+  let slider = document.getElementById("slider");
+  let slides = slider.children.length;
+  let index = 0;
+
+  document.getElementById("nextBtn").onclick = () => {
+    if (index < slides - 1) index++;
+    else index = 0; // loop to first slide
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  document.getElementById("prevBtn").onclick = () => {
+    if (index > 0) index--;
+    else index = slides - 1; // loop to last
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  };
+</script>
 
    <!-- Services -->
   <section id="services" class="bg-gray-100 py-16 px-4">
