@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> PVC Door Works | Professional Door Solutions</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>PVC Door Works | Professional Door Solutions</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .hero-section {
+      min-height: 70vh;
+      position: relative;
+    }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45); /* Dark overlay for readability */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -13,8 +29,11 @@
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold text-blue-700">Door<span class="text-gray-700">Works</span></h1>
-      <nav class="space-x-6">
+      <h1 class="text-xl md:text-2xl font-bold text-blue-700">
+        Door<span class="text-gray-700">Works</span>
+      </h1>
+
+      <nav class="hidden md:flex space-x-6">
         <a href="#about" class="hover:text-blue-600">About</a>
         <a href="#services" class="hover:text-blue-600">Services</a>
         <a href="#projects" class="hover:text-blue-600">Projects</a>
@@ -24,32 +43,24 @@
   </header>
 
   <!-- Hero Section -->
+  <section class="hero-section bg-cover bg-center bg-no-repeat flex items-center justify-center text-center text-white px-4"
+    style="background-image: url('hero-bg.jpg');">
+    
+    <div class="hero-content">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Quality Doors. Expert Craftsmanship.</h2>
+      <p class="text-lg md:text-xl mb-6">Your trusted partner for residential and commercial door solutions.</p>
 
-<section
-  class="hero-section text-white text-center py-20 bg-cover bg-center bg-no-repeat"
-  style="background-image: url('hero-bg.jpg');">
-  <div class="overlay py-20 px-4">
-    <h2 class="text-4xl font-bold mb-4 fade-in">Quality Doors. Expert Craftsmanship.</h2>
-    <p class="text-lg mb-6 fade-in-delay">Your trusted partner for residential and commercial door solutions.</p>
-    <a href="tel:+919025299998" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition fade-in-delay2">
-      📞 Call Now
-    </a>
-  </div>
-</section>
-
-
-
-
-
-
-</section>
-
-     </section>
+      <a href="tel:+919025299998"
+        class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+        📞 Call Now
+      </a>
+    </div>
+  </section>
 
   <!-- About -->
-  <section id="about" class="max-w-6xl mx-auto py-16 px-4">
-    <h3 class="text-3xl font-semibold mb-6 text-center">About Us</h3>
-    <p class="text-lg text-gray-600 text-center leading-relaxed">
+  <section id="about" class="max-w-6xl mx-auto py-14 px-4">
+    <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-center">About Us</h3>
+    <p class="text-base md:text-lg text-gray-600 text-center leading-relaxed">
       At DoorWorks, we specialize in designing, manufacturing, and installing top-quality doors.
       With over a decade of experience, we provide tailored solutions that meet every client’s needs.
     </p>
@@ -57,55 +68,60 @@
 
   <!-- Services -->
   <section id="services" class="bg-gray-100 py-16 px-4">
-    <h3 class="text-3xl font-semibold mb-10 text-center">Our Services</h3>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center">Our Services</h3>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-white rounded-2xl shadow p-6 text-center hover:shadow-lg transition">
         <h4 class="text-xl font-semibold mb-3">Door Installation</h4>
-        <p>Professional installation of wooden, glass, and metal doors for homes and offices.</p>
+        <p>Installation of wooden, glass, and metal doors.</p>
       </div>
+
       <div class="bg-white rounded-2xl shadow p-6 text-center hover:shadow-lg transition">
         <h4 class="text-xl font-semibold mb-3">Custom Fabrication</h4>
-        <p>We design and build custom doors that perfectly match your style and space.</p>
+        <p>Custom doors designed to match your style & space.</p>
       </div>
+
       <div class="bg-white rounded-2xl shadow p-6 text-center hover:shadow-lg transition">
         <h4 class="text-xl font-semibold mb-3">Repair & Maintenance</h4>
-        <p>Quick, reliable repair and maintenance services to keep your doors working smoothly.</p>
+        <p>Reliable repair and maintenance services.</p>
       </div>
     </div>
   </section>
 
   <!-- Projects -->
- <section id="projects" class="max-w-6xl mx-auto py-16 px-4">
-  <h3 class="text-3xl font-semibold mb-10 text-center">Recent Projects</h3>
+  <section id="projects" class="max-w-6xl mx-auto py-16 px-4">
+    <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center">Recent Projects</h3>
 
-  <div class="grid md:grid-cols-3 gap-6 text-center">
-    <div>
-      <img src="door1.jpg" alt="Wooden Door Installation" class="rounded-xl shadow-md hover:scale-105 transition mx-auto" />
-      <p class="mt-3 font-semibold text-gray-700">PVC kitchen designs Installation</p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+      <div>
+        <img src="door1.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
+        <p class="mt-3 font-medium text-gray-700">PVC Kitchen Designs Installation</p>
+      </div>
+
+      <div>
+        <img src="door2.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
+        <p class="mt-3 font-medium text-gray-700">Glass PVC Kitchen Designs</p>
+      </div>
+
+      <div>
+        <img src="door3.jpg" class="w-full rounded-xl shadow-md hover:scale-105 transition" />
+        <p class="mt-3 font-medium text-gray-700">TV Showcase Room</p>
+      </div>
     </div>
-    <div>
-      <img src="door2.jpg" alt="Glass Door Design" class="rounded-xl shadow-md hover:scale-105 transition mx-auto" />
-      <p class="mt-3 font-semibold text-gray-700">Glass PVC kitchen designs Design</p>
-    </div>
-    <div>
-      <img src="door3.jpg" alt="Office Entry Door" class="rounded-xl shadow-md hover:scale-105 transition mx-auto" />
-      <p class="mt-3 font-semibold text-gray-700">TV showcase the room</p>
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- Contact -->
- <section id="contact" class="bg-blue-700 text-white py-16 px-4 text-center">
-    <h3 class="text-3xl font-semibold mb-6">Contact Us</h3>
-    <p class="mb-4">We’d love to hear from you. Get in touch for any queries or quotes!</p>
-    <p class="mb-2">📞 +91 90252 99998</p>
-    <p class="mb-6">📧 naveenkumarkannan811@gmail.com</p>
-    <a href="mailto:naveenkumarkannan811@gmail.com" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Email Us</a>
   </section>
 
+  <!-- Contact -->
+  <section id="contact" class="bg-blue-700 text-white py-16 px-4 text-center">
+    <h3 class="text-2xl md:text-3xl font-semibold mb-6">Contact Us</h3>
+    <p class="mb-4">We’d love to hear from you. Get in touch!</p>
+    <p class="mb-2 text-lg">📞 +91 90252 99998</p>
+    <p class="mb-6 text-lg">📧 naveenkumarkannan811@gmail.com</p>
 
+    <a href="mailto:naveenkumarkannan811@gmail.com"
+      class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
+      Email Us
+    </a>
+  </section>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-300 text-center py-6">
@@ -114,4 +130,3 @@
 
 </body>
 </html>
-
