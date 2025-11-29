@@ -53,7 +53,7 @@
     </div>
   </header>
 
-  <!-- Visitor Stats -->
+ <!-- Visitor Stats -->
 <div class="max-w-6xl mx-auto mt-4 px-4">
   <div class="text-gray-700 text-lg font-medium">
 
@@ -70,7 +70,6 @@
     </div>
 
   </div>
-
   <hr class="mt-3 border-gray-300">
 </div>
 
@@ -278,8 +277,8 @@
   </footer>
 
 <script>
-  // ------- TOTAL VISITS COUNTER -------
-  const totalKey = "omm_shakthi_total_site_visits";
+  // ----------- GLOBAL TOTAL SITE VISITS (CountAPI) -----------
+  const totalKey = "omm_shakthi_pvc_global_total";
 
   fetch(`https://api.countapi.xyz/hit/${totalKey}`)
     .then(res => res.json())
@@ -288,26 +287,15 @@
     });
 
 
-  // ------- TODAY'S VISITS COUNTER -------
-  const todayKey = "omm_shakthi_today_visits";
-  const todayDate = new Date().toLocaleDateString();
-
-  // Load stored values
-  let storedDate = localStorage.getItem("visit_date");
-  let todayCount = localStorage.getItem("today_visits");
-
-  // If new day → reset counter
-  if (storedDate !== todayDate) {
-    todayCount = 0;
-    localStorage.setItem("visit_date", todayDate);
-  }
-
-  // Increase today's count
-  todayCount = Number(todayCount) + 1;
-  localStorage.setItem("today_visits", todayCount);
-
-  // Show updated value
-  document.getElementById("today-visits").textContent = todayCount;
+  // ----------- GLOBAL TODAY'S VISITS (CountAPI) -----------
+  const todayKey = `omm_shakthi_pvc_today_${new Date().toISOString().slice(0,10)}`;
+  
+  // Increment today's counter
+  fetch(`https://api.countapi.xyz/hit/${todayKey}`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("today-visits").textContent = data.value;
+    });
 </script>
 
 
