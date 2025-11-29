@@ -53,6 +53,17 @@
     </div>
   </header>
 
+  <!-- Post Views Counter -->
+<div class="max-w-6xl mx-auto mt-4 px-4">
+  <div class="flex items-center space-x-2 text-gray-700 text-lg font-medium">
+    <span style="font-size: 20px;">📶</span>
+    <span>Post Views:</span>
+    <span id="view-count">0</span>
+  </div>
+  <hr class="mt-3 border-gray-300">
+</div>
+
+
   <!-- Hero Section -->
   <section class="hero-section bg-cover bg-center bg-no-repeat flex items-center justify-center text-center text-white px-4"
     style="background-image: url('hero-bg.jpg');">
@@ -254,6 +265,17 @@
   <footer class="bg-gray-900 text-gray-300 text-center py-6">
     <p>&copy; 2025 OMM Shakthi PVC. All Rights Reserved.</p>
   </footer>
+
+  <script>
+  const counterKey = "omm_shakthi_pvc_views";
+
+  fetch(`https://api.countapi.xyz/hit/${counterKey}/visits`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("view-count").textContent = data.value;
+    });
+</script>
+
 
 </body>
 </html>
