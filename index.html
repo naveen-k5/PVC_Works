@@ -1,12 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OMM Shakthi PVC Door Works Salem | Professional Door Solutions</title> 
+
   <!-- Favicon -->
-<link rel="icon" type="png" href="favicon.png">
+  <link rel="icon" type="png" href="favicon.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -39,9 +39,7 @@
 
       <!-- UPDATED LOGO (Tamil) -->
       <h1 class="text-xl md:text-2xl font-bold" style="font-family: 'Noto Sans Tamil', sans-serif;">
-       <span style="color:#BF1A1A; font-weight:700;">ஓம்</span>
-<span style="color:#BF1A1A; font-weight:700;">சக்தி PVC Agency</span>
-
+        <span style="color:#BF1A1A; font-weight:700;">ஓம் சக்தி PVC Agency</span>
       </h1>
 
       <nav class="hidden md:flex space-x-6">
@@ -53,26 +51,25 @@
     </div>
   </header>
 
- <!-- Visitor Stats -->
-<div class="max-w-6xl mx-auto mt-4 px-4">
-  <div class="text-gray-700 text-lg font-medium">
+  <!-- Visitor Stats -->
+  <div class="max-w-6xl mx-auto mt-4 px-4">
+    <div class="text-gray-700 text-lg font-medium">
 
-    <div class="flex items-center space-x-2">
-      <span style="font-size: 20px;">📶</span>
-      <span>Total Site Visits:</span>
-      <span id="total-visits">0</span>
+      <div class="flex items-center space-x-2">
+        <span style="font-size: 20px;">📶</span>
+        <span>Total Site Visits:</span>
+        <span id="total-visits">0</span>
+      </div>
+
+      <div class="flex items-center space-x-2 mt-2">
+        <span style="font-size: 20px;">📊</span>
+        <span>Today's Visits:</span>
+        <span id="today-visits">0</span>
+      </div>
+
     </div>
-
-    <div class="flex items-center space-x-2 mt-2">
-      <span style="font-size: 20px;">📊</span>
-      <span>Today's Visits:</span>
-      <span id="today-visits">0</span>
-    </div>
-
+    <hr class="mt-3 border-gray-300">
   </div>
-  <hr class="mt-3 border-gray-300">
-</div>
-
 
   <!-- Hero Section -->
   <section class="hero-section bg-cover bg-center bg-no-repeat flex items-center justify-center text-center text-white px-4"
@@ -89,127 +86,46 @@
     </div>
   </section>
 
- 
+  <!-- Projects Section -->
+  <section id="projects" class="max-w-6xl mx-auto py-16 px-4">
+    <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center">Recent Projects</h3>
 
- 
+    <div class="relative overflow-hidden">
 
-<!-- Projects Slider -->
-<section id="projects" class="max-w-6xl mx-auto py-16 px-4">
-  <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center">Recent Projects</h3>
+      <div id="slider" class="flex transition-transform duration-500">
 
-  <div class="relative overflow-hidden">
+        <div class="min-w-full px-4 text-center">
+          <img src="door1.jpg" class="w-full rounded-xl shadow-md" />
+          <p class="mt-3 font-medium text-gray-700">PVC Kitchen Designs Installation</p>
+        </div>
 
-    <!-- Slider Wrapper -->
-    <div id="slider" class="flex transition-transform duration-500">
+        <div class="min-w-full px-4 text-center">
+          <img src="door2.jpg" class="w-full rounded-xl shadow-md" />
+          <p class="mt-3 font-medium text-gray-700">Glass PVC Kitchen Designs</p>
+        </div>
 
-      <!-- Slide 1 -->
-      <div class="min-w-full px-4 text-center">
-        <img src="door1.jpg" class="w-full rounded-xl shadow-md" />
-        <p class="mt-3 font-medium text-gray-700">PVC Kitchen Designs Installation</p>
+        <div class="min-w-full px-4 text-center">
+          <img src="door3.jpg" class="w-full rounded-xl shadow-md" />
+          <p class="mt-3 font-medium text-gray-700">TV Showcase Room</p>
+        </div>
+
       </div>
 
-      <!-- Slide 2 -->
-      <div class="min-w-full px-4 text-center">
-        <img src="door2.jpg" class="w-full rounded-xl shadow-md" />
-        <p class="mt-3 font-medium text-gray-700">Glass PVC Kitchen Designs</p>
-      </div>
+      <button id="prevBtn"
+        class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-black">
+        ◀
+      </button>
+      <button id="nextBtn"
+        class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-black">
+        ▶
+      </button>
 
-      <!-- Slide 3 -->
-      <div class="min-w-full px-4 text-center">
-        <img src="door3.jpg" class="w-full rounded-xl shadow-md" />
-        <p class="mt-3 font-medium text-gray-700">TV Showcase Room</p>
-      </div>
+      <div id="dots" class="flex justify-center mt-4 space-x-2"></div>
 
     </div>
+  </section>
 
-    <!-- Navigation Buttons -->
-    <button id="prevBtn"
-      class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-black">
-      ◀
-    </button>
-    <button id="nextBtn"
-      class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-black">
-      ▶
-    </button>
-
-    <!-- Dots -->
-    <div id="dots" class="flex justify-center mt-4 space-x-2"></div>
-
-  </div>
-</section>
-
-<!-- Slider Script -->
-<script>
-  let slider = document.getElementById("slider");
-  let slides = slider.children.length;
-  let index = 0;
-  let dotsContainer = document.getElementById("dots");
-
-  // Create dots dynamically
-  for (let i = 0; i < slides; i++) {
-    let dot = document.createElement("div");
-    dot.className = "w-3 h-3 rounded-full bg-gray-400 cursor-pointer";
-    dot.onclick = () => moveToSlide(i);
-    dotsContainer.appendChild(dot);
-  }
-
-  function updateDots() {
-    [...dotsContainer.children].forEach((dot, i) => {
-      dot.className =
-        "w-3 h-3 rounded-full transition " +
-        (i === index ? "bg-blue-600" : "bg-gray-400");
-    });
-  }
-
-  function moveToSlide(i) {
-    index = i;
-    slider.style.transform = `translateX(-${index * 100}%)`;
-    updateDots();
-  }
-
-  updateDots();
-
-  // Navigation buttons
-  document.getElementById("nextBtn").onclick = () => {
-    index = (index + 1) % slides;
-    moveToSlide(index);
-  };
-
-  document.getElementById("prevBtn").onclick = () => {
-    index = (index - 1 + slides) % slides;
-    moveToSlide(index);
-  };
-
-  // Auto-slide every 4 seconds
-  setInterval(() => {
-    index = (index + 1) % slides;
-    moveToSlide(index);
-  }, 4000);
-
-  // Touch swipe support
-  let startX = 0;
-
-  slider.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  slider.addEventListener("touchend", (e) => {
-    let endX = e.changedTouches[0].clientX;
-
-    if (startX - endX > 50) {
-      // Swipe left
-      index = (index + 1) % slides;
-    } else if (endX - startX > 50) {
-      // Swipe right
-      index = (index - 1 + slides) % slides;
-    }
-
-    moveToSlide(index);
-  });
-</script>
-
-
-   <!-- Services -->
+  <!-- Services -->
   <section id="services" class="bg-gray-100 py-16 px-4">
     <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center">Our Services</h3>
 
@@ -230,7 +146,8 @@
       </div>
     </div>
   </section>
-   <!-- About -->
+
+  <!-- About -->
   <section id="about" class="max-w-6xl mx-auto py-14 px-4">
     <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-center">About Us</h3>
     <p class="text-base md:text-lg text-gray-600 text-center leading-relaxed">
@@ -251,54 +168,40 @@
       Email Us
     </a>
   </section>
-  
-<!-- Location Map -->
-<section id="location" class="py-16 px-4 bg-white text-center">
-  <h3 class="text-2xl md:text-3xl font-semibold mb-6">Our Location</h3>
-  <p class="text-gray-600 mb-6">Find us easily on Google Maps</p>
 
-  <div class="max-w-4xl mx-auto">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15587.123456789012!2d78.139000!3d11.667000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1e42a8c1b21%3A0xabcdef123456789!2sOmm%20Sakthi%20PVC%20Works%20%26%20Traders%2C%20Hari%20Hara%20Natha%20Swami%20Koil%20St%2C%20Anna%20Nagar%2C%20Omalur%2C%20Salem%20636455!5e0!3m2!1sen!2sin!4v1700000000000"
-      width="100%"
-      height="350"
-      style="border:0; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.2);"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
+  <!-- Visitor Counter + Slider Script + Today Reset Logic -->
+  <script>
+    // ---------- TOTAL SITE VISITS (GLOBAL – CountAPI) ----------
+    fetch("https://api.countapi.xyz/hit/ommshakthi/total")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("total-visits").textContent = data.value;
+      });
 
+    // ---------- TODAY'S VISITS (AUTO RESET AT 12 AM – localStorage) ----------
+    function updateTodayVisits() {
+      let today = new Date().toISOString().slice(0, 10); 
+      let savedDate = localStorage.getItem("pv_date");
+      let count = parseInt(localStorage.getItem("pv_count")) || 0;
+
+      if (savedDate !== today) {
+        count = 1;
+        localStorage.setItem("pv_date", today);
+        localStorage.setItem("pv_count", count);
+      } else {
+        count++;
+        localStorage.setItem("pv_count", count);
+      }
+
+      document.getElementById("today-visits").textContent = count;
+    }
+    updateTodayVisits();
+  </script>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-300 text-center py-6">
     <p>&copy; 2025 OMM Shakthi PVC. All Rights Reserved.</p>
   </footer>
-
-<script>
-  // ----------- GLOBAL TOTAL SITE VISITS (CountAPI) -----------
-  const totalKey = "omm_shakthi_pvc_global_total";
-
-  fetch(`https://api.countapi.xyz/hit/${totalKey}`)
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("total-visits").textContent = data.value;
-    });
-
-
-  // ----------- GLOBAL TODAY'S VISITS (CountAPI) -----------
-  const todayKey = `omm_shakthi_pvc_today_${new Date().toISOString().slice(0,10)}`;
-  
-  // Increment today's counter
-  fetch(`https://api.countapi.xyz/hit/${todayKey}`)
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("today-visits").textContent = data.value;
-    });
-</script>
-
-
 
 </body>
 </html>
