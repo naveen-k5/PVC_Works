@@ -247,14 +247,28 @@
   </footer>
 
   <!-- Offer Popup -->
-<div id="offerPopup" class="popup-overlay">
-  <div class="popup-box">
-    <h2 style="color: #ff6600;"><b>🔥 Special Offer!</b></h2>
-    <p>  இந்த வாரம் அனைத்து PVC கதவுகளுக்கும் <b>10% தள்ளுபடி</b> பெறுங்கள்.</p>
-    <p>Free site visit + Free installation 🎉</p>
-    <button id="closePopup" class="popup-btn">Close</button>
+<div id="offerPopup" class="fixed inset-0 flex items-center justify-center bg-black/50">
+  <div class="bg-white p-6 rounded-xl shadow-lg text-center max-w-sm">
+    
+    <p class="text-lg font-bold mb-2">
+      இந்த வாரம் அனைத்து PVC கதவுகளுக்கும் 10% தள்ளுபடி பெறுங்கள்.
+    </p>
+
+    <p class="text-md">Free site visit + Free installation 🎉</p>
+
+    <button class="mt-4 px-5 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition" onclick="closePopup()">
+      Close
+    </button>
+
   </div>
 </div>
+
+<script>
+  function closePopup() {
+    document.getElementById('offerPopup').style.display = 'none';
+  }
+</script>
+
   <script>
 // Show popup after 1 second
 window.addEventListener("load", () => {
